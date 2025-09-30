@@ -57,7 +57,7 @@
    ```bash
    git clone git@github.com:Solva-technology/solva-notes-users-quasar696.git
    cd notes_service
-````
+   ```
 
 2. Запустить приложение в Docker:
 
