@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block title %} Список заметок{% endblock %}
+
+{% block content %}
+    <h1>Привет, {{ user }}!</h1>
+     {% if request.user.is_authenticated %}
+    <p><a href="{% url 'notes:note_create' %}">Создать новую заметку</a></p>
+  {% endif %}
+    <ul>
+        {% for note in notes %}
+        <li onclick="window.location='{% url 'notes:detail' note.id %}'" style="cursor: pointer;">
+            <p><strong>Текст: </strong>{{ note.text }}</p>
+            <p><strong>Автор: </strong>{{ note.author }}</p>
+            <p><strong>Статус: </strong>{{ note.status }}</p>
+            <p><strong>Категории: </strong>
+                {% for cat in note.categories.all %}
+                    {{ cat.title }}{% if not forloop.last %}, {% endif %}
+                {% endfor %}
+            </p>
+            <p><strong>Время: </strong>{{ note.created_at }}</p>
+        </li>
+        {% empty %}
+            <p>Заметок пока нет 🙃</p>
+        {% endfor %}
+    </ul>
+{% endblock %}

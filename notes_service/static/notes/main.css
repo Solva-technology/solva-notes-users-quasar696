@@ -1,0 +1,349 @@
+html,
+body {
+    height: 100%;
+    margin: 0;
+    font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background: #f7f9fc;
+    color: #333;
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+    flex: 1;
+}
+
+header {
+    background: #4a90e2;
+    color: white;
+    padding: 20px 0;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2rem;
+    text-align: center;
+}
+
+nav {
+    text-align: center;
+    margin-top: 10px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    margin: 0 10px;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #ffe082;
+}
+
+main {
+    flex: 1;
+}
+
+main h1 {
+    margin-top: 30px;
+    text-align: center;
+    font-size: 1.8rem;
+    color: #4a4a4a;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+}
+
+li {
+    background: white;
+    margin: 15px 0;
+    padding: 15px 20px;
+    border-radius: 12px;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+li:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
+
+li a {
+    text-decoration: none;
+    color: #4a90e2;
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+li a:hover {
+    color: #2c3e50;
+}
+
+hr {
+    border: none;
+    border-top: 1px solid #ddd;
+    margin: 0;
+}
+
+footer {
+    margin-top: auto;
+    padding: 15px 0;
+    text-align: center;
+    background: #2f2f2f;
+    color: #ddd;
+    font-size: 0.9rem;
+}
+
+form {
+    max-width: 600px;
+    margin: 30px auto;
+    padding: 25px 30px;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+}
+
+form h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #4a4a4a;
+    font-size: 1.6rem;
+}
+
+form p {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 500;
+    color: #333;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+textarea,
+select {
+    width: 90%;
+    padding: 10px 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+    border-color: #4a90e2;
+    box-shadow: 0 0 4px rgba(74, 144, 226, 0.3);
+    outline: none;
+}
+
+button[type="submit"] {
+    display: inline-block;
+    background: #4a90e2;
+    color: #fff;
+    padding: 12px 25px;
+    font-size: 1rem;
+    font-weight: 500;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+    margin-top: 10px;
+}
+
+button[type="submit"]:hover {
+    background: #357abd;
+    transform: translateY(-2px);
+}
+
+a {
+    display: inline-block;
+    margin-top: 15px;
+    text-decoration: none;
+    color: #4a90e2;
+    font-weight: 500;
+}
+
+a:hover {
+    color: #2c3e50;
+}
+
+.errors {
+    background: #ffe6e6;
+    border: 1px solid #ff9999;
+    color: #cc0000;
+    padding: 10px 15px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.errors li {
+    margin: 5px 0;
+}
+
+.delete-confirm {
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 25px 30px;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.delete-confirm h2 {
+    color: #cc0000;
+    font-size: 1.6rem;
+    margin-bottom: 20px;
+}
+
+.delete-confirm p {
+    font-size: 1.1rem;
+    margin-bottom: 25px;
+    color: #444;
+}
+
+.delete-confirm form {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+button[type="submit"].danger {
+    background: #e53935;
+    color: #fff;
+    padding: 12px 25px;
+    font-size: 1rem;
+    font-weight: 500;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+button[type="submit"].danger:hover {
+    background: #c62828;
+    transform: translateY(-2px);
+}
+
+a.cancel-btn {
+    display: inline-block;
+    background: #888;
+    color: #fff;
+    padding: 12px 25px;
+    font-size: 1rem;
+    font-weight: 500;
+    border-radius: 10px;
+    text-decoration: none;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+a.cancel-btn:hover {
+    background: #555;
+    transform: translateY(-2px);
+}
+
+.note-actions {
+    margin-top: 25px;
+    display: flex;
+    gap: 15px;
+}
+
+.note-actions a {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 1rem;
+    font-weight: 500;
+    border-radius: 10px;
+    text-decoration: none;
+    transition: background 0.3s ease, transform 0.2s ease;
+    color: #fff;
+}
+
+.note-actions a.edit-btn {
+    background: #4a90e2;
+}
+
+.note-actions a.edit-btn:hover {
+    background: #357abd;
+    transform: translateY(-2px);
+}
+
+.note-actions a.delete-btn {
+    background: #e53935;
+}
+
+.note-actions a.delete-btn:hover {
+    background: #c62828;
+    transform: translateY(-2px);
+}
+
+form button[type="submit"] {
+    display: inline-block;
+    background: #4a90e2;
+    color: #fff;
+    padding: 12px 25px;
+    font-size: 1rem;
+    font-weight: 500;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+    margin-top: 10px;
+}
+
+form button[type="submit"]:hover {
+    background: #357abd;
+    transform: translateY(-2px);
+}
+
+a.back-btn {
+    display: inline-block;
+    background: #888;
+    color: #fff;
+    padding: 12px 25px;
+    font-size: 1rem;
+    font-weight: 500;
+    border-radius: 10px;
+    text-decoration: none;
+    margin-left: 10px;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+a.back-btn:hover {
+    background: #555;
+    transform: translateY(-2px);
+}
+
+.logout-form {
+    max-width: none;
+    margin: 0;
+    background: none;
+    box-shadow: none;
+    display: inline;
+}
+
+.logout-btn {
+    background: none;
+    border: none;
+    color: #007bff;
+    cursor: pointer;
+    font-size: 0.9rem;
+    padding: 0;
+    margin-left: 10px;
+}

@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+
+{% block title %} Пост номер {{ note.id }} {% endblock %}
+
+{% block content %}
+
+    {% if note %}
+        <h1>Заметка</h1>
+        <p><strong>Текст:</strong> {{ note.text }}</p>
+        <p><strong>Автор:</strong> {{ note.author.name }} ({{ note.author.email }})</p>
+
+        <h2>Профиль автора</h2>
+        <p><strong>Биография:</strong> {{ note.author.userprofile.bio }}</p>
+        <p><strong>Дата рождения:</strong> {{ note.author.userprofile.birth_date }}</p>
+
+        <h2>Статус</h2>
+        <p><strong>Название:</strong> {{ note.status.name }}</p>
+        <p><strong>Финальный:</strong> 
+            {% if note.status.is_final %}
+                Да
+            {% else %}
+                Нет
+            {% endif %}
+        </p>
+
+        <h2>Категории</h2>
+        <ul>
+            {% for category in note.categories.all %}
+                <li>{{ category.title }} — {{ category.description }}</li>
+            {% empty %}
+                <li>Нет категорий</li>
+            {% endfor %}
+        </ul>
+
+        {% if request.user.is_authenticated %}
+            {% if request.user == note.author or request.user.is_staff %}
+                <div class="note-actions">
+                    <a href="{% url 'notes:note_edit' note.id %}" class="edit-btn">Редактировать</a>
+                    <a href="{% url 'notes:note_delete' note.id %}" class="delete-btn">Удалить</a>
+                </div>
+            {% endif %}
+        {% endif %}
+
+    {% else %}
+        <p>Заметка не найдена</p>
+    {% endif %}
+
+{% endblock %}
