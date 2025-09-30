@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block title %}Профиль пользователя{% endblock %}
+
+{% block content %}
+  <h2>Профиль пользователя: {{ user.username }}</h2>
+
+  <p>Email: {{ user.email }}</p>
+
+  {% if user.userprofile %}
+    <p>О себе: {{ user.userprofile.bio }}</p>
+    <p>Дата рождения: {{ user.userprofile.birth_date|date:"d.m.Y" }}</p>
+  {% endif %}
+
+  <h3>Заметки пользователя</h3>
+  <ul>
+    {% for note in notes %}
+      <li>
+        <a href="{% url 'notes:detail' note.id %}">{{ note.text|truncatewords:10 }}</a>
+        ({{ note.status.name }}, {{ note.created_at|date:"d.m.Y H:i" }})
+      </li>
+    {% empty %}
+      <li>У пользователя пока нет заметок.</li>
+    {% endfor %}
+  </ul>
+{% endblock %}

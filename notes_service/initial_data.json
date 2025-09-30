@@ -1,0 +1,42 @@
+[
+    {
+        "model": "notes.status",
+        "pk": 1,
+        "fields": {
+            "name": "Черновик",
+            "is_final": false
+        }
+    },
+    {
+        "model": "notes.status",
+        "pk": 2,
+        "fields": {
+            "name": "Опубликовано",
+            "is_final": true
+        }
+    },
+    {
+        "model": "notes.category",
+        "pk": 1,
+        "fields": {
+            "title": "Работа",
+            "description": "Заметки по работе"
+        }
+    },
+    {
+        "model": "notes.category",
+        "pk": 2,
+        "fields": {
+            "title": "Учёба",
+            "description": "Учебные материалы"
+        }
+    },
+    {
+        "model": "notes.category",
+        "pk": 3,
+        "fields": {
+            "title": "Личное",
+            "description": "Личные заметки"
+        }
+    }
+]

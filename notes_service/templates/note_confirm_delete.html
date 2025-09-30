@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block content %}
+  <div class="delete-confirm">
+    <h2>Удалить заметку?</h2>
+    <p>{{ note.text }}</p>
+    <form method="post">
+      {% csrf_token %}
+      <button type="submit" class="danger">Удалить</button>
+      <a href="{% url 'notes:detail' note.id %}" class="cancel-btn">Отмена</a>
+    </form>
+  </div>
+{% endblock %}
